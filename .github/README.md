@@ -1,6 +1,6 @@
 # ArminC-CSGO-Cvars
 
-The following is a list of [Counter-Strike: Global Offensive](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive "Counter-Strike: Global Offensive") console commands and variables alongside hidden/development-only too.
+The following is a list of [Counter-Strike: Global Offensive](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive "Counter-Strike: Global Offensive") console commands and variables (hidden/development-only too).
 
 ## Version
 
@@ -12,7 +12,7 @@ Exe build: 08:24:12 Mar  2 2020 (7776) (730)
 
 ### History
 
-Looking for a specific release? [Here is the list of updates.](https://github.com/ArmynC/ArminC-SkyStone/commits/master)
+Looking for a specific release? [Here is the list of updates.](https://github.com/ArmynC/ArminC-CSGO-Cvars/commits/master/cvarlist_all.log)
 
 ## License
 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
