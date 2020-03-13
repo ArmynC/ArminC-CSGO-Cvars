@@ -1,6 +1,6 @@
 # ArminC-CSGO-Cvars
 
-The following is a list of [Counter-Strike: Global Offensive](https://developer.valvesoftware.com/wiki/Counter-Strike:_Global_Offensive "Counter-Strike: Global Offensive") console commands and variables (hidden/development-only too).
+The following is a list of [Counter-Strike: Global Offensive](https://liquipedia.net/counterstrike/Patches) console commands and variables (hidden/development-only too).
 
 ##### View [cvarlist_all.log](https://github.com/ArmynC/ArminC-CSGO-Cvars/blob/master/cvarlist_all.log), latest version.
 
