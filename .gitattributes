@@ -18,6 +18,7 @@
 *.mdtxt      text
 *.mdtext     text
 *.txt        text
+*.log        text
 AUTHORS      text
 CHANGELOG    text
 CHANGES      text
