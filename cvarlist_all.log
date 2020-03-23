@@ -2395,6 +2395,7 @@ mp_backup_round_file_pattern              | %prefix%_round%round%.txt | "sv"    
 mp_blockstyle                             | 1        | "devonly", "cl", "rep" | Sets the style of capture point blocking used. 0 = Blocks break captures completely. 1 = Blocks only pause captures.
 mp_bonusroundtime                         | 15       | "devonly", "cl", "rep" | Time after round win until round restarts
 mp_bot_ai_bt                              |          | "sv"             | Use the specified behavior tree file to drive the bot behavior.
+mp_bot_ai_bt_clear_cache                  | cmd      | "sv"             | Clears the cache for behavior tree files.
 mp_buy_allow_grenades                     | 1        | "cl", "rep"      | Whether players can purchase grenades from the buy menu or not.
 mp_buy_allow_guns                         | 255      | "cl", "rep"      | Whether players can purchase guns: pistols (1), SMGs (2), rifles (4), shotguns (8), sniper rifles (16), heavy MGs (32).
 mp_buy_anywhere                           | 0        | "cl", "nf", "rep" | When set, players can buy anywhere, not only in buyzones. 0 = default. 1 = both teams. 2 = Terrorists. 3 = Counter-Terrorists.
