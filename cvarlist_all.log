@@ -3034,16 +3034,16 @@ play_hrtf                                 | cmd      |                  | Play a
 playcast                                  | cmd      |                  | Play a broadcast
 playdemo                                  | cmd      |                  | Play a recorded demo file (.dem ).
 player_botdifflast_s                      | 2        | "cl", "a"        | 
-player_competitive_maplist_2v2_8_1_E8907D2E | mg_de_train,mg_de_lake,mg_de_inferno,mg_de_shortnuke,mg_de_vertigo,mg_gd_rialto,mg_de_shortdust,mg_de_overpass,mg_de_cbble | "cl", "a"        | 
-player_competitive_maplist_8_8_1_475B5511 | mg_de_dust2,mg_de_train,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_de_cache,mg_cs_agency,mg_de_overpass | "cl", "a"        | 
+player_competitive_maplist_2v2_8_0_E8907D2E | mg_de_train,mg_de_lake,mg_de_inferno,mg_de_shortnuke,mg_de_vertigo,mg_gd_rialto,mg_de_shortdust,mg_de_overpass,mg_de_cbble | "cl", "a"        | 
+player_competitive_maplist_8_8_0_1B1D6577 | mg_de_dust2,mg_de_train,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_de_cache,mg_de_anubis,mg_de_chlorine,mg_cs_agency,mg_de_overpass | "cl", "a"        | 
 player_debug_print_damage                 | 0        | "sv", "cheat"    | When true, print amount and type of all damage received by player to console.
 player_nevershow_communityservermessage   | 0        | "cl", "a", "ss"  | 
 player_old_armor                          | 0        | "devonly", "sv"  | 
 player_ping                               | cmd      | "sv", "print"    | Creates a ping notification where the player is looking.
 player_ping_throttle_decay                | 0.58     | "sv", "cheat"    | Decay for how fast the ping throttle delay will decay
-player_survival_list_8_1_7                | mg_dz_blacksite,mg_dz_sirocco,mg_dz_junglety | "cl", "a"        | 
+player_survival_list_8_0_7                | mg_dz_blacksite,mg_dz_sirocco,mg_dz_junglety | "cl", "a"        | 
 player_teamplayedlast                     | 3        | "cl", "a", "ss"  | 
-player_wargames_list2_8_1_604             | mg_skirmish_flyingscoutsman,mg_skirmish_armsrace,mg_skirmish_demolition | "cl", "a"        | 
+player_wargames_list2_8_0_604             | mg_skirmish_flyingscoutsman,mg_skirmish_armsrace,mg_skirmish_demolition | "cl", "a"        | 
 playflush                                 | cmd      |                  | Play a sound, reloading from disk in case of changes.
 playgamesound                             | cmd      | "cl", "cheat"    | Play a sound from the game sounds txt file
 playoverwatchevidence                     | cmd      | "hidden"         | Play evidence for an overwatch case.
