@@ -2900,6 +2900,7 @@ net_threaded_socket_burst_cap             | 1024     |                  | Max nu
 net_threaded_socket_recovery_rate         | 6400     |                  | Number of packets per second that threaded socket pump algorithm allows from client.
 net_threaded_socket_recovery_time         | 60       |                  | Number of seconds over which the threaded socket pump algorithm will fully recover client ratelimit.
 net_usesocketsforloopback                 | 0        | "devonly"        | Use network sockets layer even for listen server local player's packets (multiplayer only).
+net_warningthrottle                       | 5        |                  | Network warning throttling to specified Hz rate
 next                                      | 0        | "cheat"          | Set to 1 to advance to next frame ( when singlestep == 1 )
 nextdemo                                  | cmd      |                  | Play next demo in sequence.
 nextlevel                                 |          | "cl", "nf", "rep" | If set to a valid map name, will trigger a changelevel to the specified map at the end of the round
