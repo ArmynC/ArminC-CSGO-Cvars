@@ -7,7 +7,7 @@ The following is a list of [Counter-Strike: Global Offensive](https://liquipedia
 ## Version
 
 ```
-Protocol version 13746 [1089/1089]
+Protocol version 13746 [1090/1090]
 Exe version 1.37.4.6 (csgo)
 Exe build: 14:10:24 Mar 19 2020 (7803) (730)
 ```
