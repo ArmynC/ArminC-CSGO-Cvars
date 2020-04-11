@@ -4697,7 +4697,7 @@ ui_loading_tip_f1                         | 0.05     | "devonly", "cl"  |
 ui_loading_tip_f2                         | 0.40     | "devonly", "cl"  | 
 ui_loading_tip_refresh                    | 5        | "devonly", "cl"  | 
 ui_lobby_draft_enabled                    |          | "cl"             | 
-ui_nearbylobbies_filter2                  | competitive | "cl", "a"        | 
+ui_nearbylobbies_filter3                  | competitive | "cl", "a"        | 
 ui_news_last_read_link                    |          | "cl", "a"        | 
 ui_playsettings_maps_listen_casual        | random_classic | "cl", "a"        | 
 ui_playsettings_maps_listen_competitive   | random_classic | "cl", "a"        | 
@@ -4915,6 +4915,7 @@ wc_link_edit                              | cmd      | "sv", "cheat"    |
 weapon_accuracy_forcespread               | 0        | "cl", "rep"      | Force spread to the specified value.
 weapon_accuracy_logging                   | 0        | "devonly", "cl", "a", "rep" | 
 weapon_accuracy_nospread                  | 0        | "cl", "rep"      | Disable weapon inaccuracy spread
+weapon_accuracy_reset_on_deploy           | 0        | "cl", "rep", "cheat" | On deploy, forcibly reset weapon accuracy to zero.
 weapon_accuracy_shotgun_spread_patterns   | 1        | "cl", "rep"      | 
 weapon_air_spread_scale                   | 1.0      | "cl", "rep"      | Scale factor for jumping inaccuracy, set to 0 to make jumping accuracy equal to standing
 weapon_auto_cleanup_time                  | 0        | "cl"             | If set to non-zero, weapons will delete themselves after the specified time (in seconds) if no players are near.
