@@ -1072,6 +1072,7 @@ cl_show_enemy_avatar_colors               | 1        | "devonly", "cl"  |
 cl_show_equipment_value                   | 0        | "devonly", "cl"  | 
 cl_show_matchmaking_stat_spew             | 0        | "devonly", "cl"  | 
 cl_show_new_hint_delay                    | 10.0     | "devonly", "cl"  | 
+cl_show_observer_crosshair                | 1        | "cl", "a"        | Show the crosshair of the player being observed. 0: off 1: friends and party 2: everyone 
 cl_show_playernames_max_chars_console     | 0        | "devonly", "cl"  | Shows all player names (including bots) as 16 W's.
 cl_show_quest_info                        | 0        | "devonly", "cl"  | 
 cl_show_splashes                          | 1        | "devonly", "cl"  | 
