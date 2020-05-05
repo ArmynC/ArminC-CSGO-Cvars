@@ -2580,7 +2580,7 @@ mp_randomspawn                            | 0        | "cl", "rep"      | Determ
 mp_randomspawn_dist                       | 0        | "cl", "rep"      | If using mp_randomspawn, determines whether to test distance when selecting this spot.
 mp_randomspawn_los                        | 1        | "cl", "rep"      | If using mp_randomspawn, determines whether to test Line of Sight when spawning.
 mp_require_gun_use_to_acquire             | 0        | "sv"             | Whether guns must be +used to acquire or default is touch-to-pickup
-mp_respawn_immunitytime                   | 4.0      | "cl", "rep"      | How many seconds after respawn immunity lasts.
+mp_respawn_immunitytime                   | 4.0      | "cl", "rep"      | How many seconds after respawn immunity lasts. Set to negative value to disable warmup immunity.
 mp_respawn_on_death_ct                    | 0        | "cl", "rep"      | When set to 1, counter-terrorists will respawn after dying.
 mp_respawn_on_death_t                     | 0        | "cl", "rep"      | When set to 1, terrorists will respawn after dying.
 mp_respawnwavetime                        | 10.0     | "devonly", "cl", "nf", "rep" | Time between respawn waves.
