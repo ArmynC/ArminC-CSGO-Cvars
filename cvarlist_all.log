@@ -1210,6 +1210,7 @@ commentary_finishnode                     | cmd      | "sv"             |
 commentary_firstrun                       | 0        | "cl", "a"        | 
 commentary_showmodelviewer                | cmd      | "cl"             | Display the commentary model viewer. Usage: commentary_showmodelviewer &lt;model name&gt; &lt;optional attached model name&gt;
 commentary_testfirstrun                   | cmd      | "cl"             | 
+con_allownotify                           | 1        | "a"              | Allows the notification area to be visible.
 con_drawnotify                            | 1        | "devonly"        | Disables drawing of notification area (for taking screenshots).
 con_enable                                | 0        | "a"              | Allows the console to be activated.
 con_filter_enable                         | 0        |                  | Filters console output based on the setting of con_filter_text. 1 filters completely, 2 displays filtered text brighter than other text.
@@ -1563,6 +1564,7 @@ fs_printopenfiles                         | cmd      |                  | Show a
 fs_report_long_reads                      | 0        | "devonly"        | 0:Off, 1:All (for tracking accumulated duplicate read times), &gt;1:Microsecond threshold
 fs_report_sync_opens                      | 0        |                  | 0:Off, 1:Always, 2:Not during map load
 fs_report_sync_opens_callstack            | 0        | "devonly"        | 0 to not display the call-stack when we hit a fs_report_sync_opens warning. Set to 1 to display the call-stack.
+fs_show_pure_state                        | cmd      |                  | Display current filesystem whitelist state
 fs_syncdvddevcache                        | cmd      |                  | Force the 360 to get updated files that are in your p4 changelist(s) from the host PC when running with -dvddev.
 fs_warning_level                          | cmd      |                  | Set the filesystem warning level.
 fs_warning_mode                           | 0        | "devonly"        | 0:Off, 1:Warn main thread, 2:Warn other threads
@@ -4363,6 +4365,8 @@ sv_precacheinfo                           | cmd      |                  | Show p
 sv_prime_accounts_only                    | 0        | "sv"             | When this setting is enabled only prime users can connect to this game server.
 sv_prop_door_open_speed_scale             | 1        | "sv", "rep"      | 
 sv_pure                                   | cmd      |                  | Show user data.
+sv_pure_allow_loose_file_loads            | 1        |                  | If set to 1, clients may load non-vpk files from pure protected directories.
+sv_pure_allow_missing_files               | 1        |                  | If set to 1, the server will allow clients to play if files they loaded are missing on server, otherwise treat client as file mismatch.
 sv_pure_checkvpk                          | cmd      |                  | CheckPureServerVPKFiles
 sv_pure_consensus                         | 99999999 |                  | Minimum number of file hashes to agree to form a consensus.
 sv_pure_finduserfiles                     | cmd      |                  | ListPureServerFiles
