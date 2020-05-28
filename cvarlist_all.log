@@ -1964,7 +1964,7 @@ mat_aniso_disable                         | 0        | "cheat"          | NOTE: 
 mat_antialias                             | 0        | "devonly"        | 
 mat_antialias_optionsui                   | 9999999  | "devonly", "cl"  | Used to set video property from options UI.
 mat_antialias_restart                     | 0        | "devonly", "cl"  | Used to set video property at device reset.
-mat_async_tex_maxtime_ms                  | 0.5      | "devonly"        | Cutoff time (in ms) spent in ServiceAsyncTextureLoads
+mat_async_tex_maxtime_ms                  | 3        | "devonly"        | Cutoff time (in ms) spent in ServiceAsyncTextureLoads
 mat_autoexposure_max                      | 2        | "cl", "cheat"    | 
 mat_autoexposure_max_multiplier           | 1.0      | "cl", "cheat"    | 
 mat_autoexposure_min                      | 0.5      | "cl", "cheat"    | 
@@ -2221,6 +2221,7 @@ mat_texture_list_txlod                    | cmd      | "norecord"       | Adjust
 mat_texture_list_txlod_sync               | cmd      | "norecord"       | 'reset' - resets all run-time changes to LOD overrides, 'save' - saves all changes to material content files
 mat_texture_list_view                     | 1        | "devonly", "numeric" | If this is nonzero, then the texture list panel will render thumbnails of currently-loaded textures.
 mat_texture_tracking                      | 0        | "devonly"        | 
+mat_texturestreaming                      | 0        | "devonly"        | Defer asynchronous loading of high-resolution textures.
 mat_tonemap_algorithm                     | 1        | "cl", "cheat"    | 0 = Original Algorithm 1 = New Algorithm
 mat_tonemapping_occlusion_use_stencil     | 0        | "devonly"        | 
 mat_triplebuffered                        | 0        | "devonly"        | This means we want triple buffering if we are fullscreen and vsync'd
@@ -4702,6 +4703,7 @@ ui_loading_tip_f1                         | 0.05     | "devonly", "cl"  |
 ui_loading_tip_f2                         | 0.40     | "devonly", "cl"  | 
 ui_loading_tip_refresh                    | 5        | "devonly", "cl"  | 
 ui_lobby_draft_enabled                    |          | "cl"             | 
+ui_mainmenu_bkgnd_movie1                  | anubis   | "cl", "a"        | Main menu background movie
 ui_nearbylobbies_filter3                  | competitive | "cl", "a"        | 
 ui_news_last_read_link                    |          | "cl", "a"        | 
 ui_playsettings_maps_listen_casual        | random_classic | "cl", "a"        | 
