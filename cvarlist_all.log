@@ -878,6 +878,7 @@ cl_extrapolate_amount                     | 0.25     | "cl", "cheat"    | Set ho
 cl_failremoteconnections                  | 0        | "devonly"        | Force connection attempts to time out
 cl_fastdetailsprites                      | 1        | "cl", "cheat"    | whether to use new detail sprite system
 cl_fasttempentcollision                   | 5        | "devonly", "cl"  | 
+cl_filtertext_enabled                     | 1        | "cl", "a"        | Enables text chat filtering
 cl_find_ent                               | cmd      | "cl", "cheat"    | Find and list all client entities with classnames that contain the specified substring.<br>Format: cl_find_ent &lt;substring&gt;<br>
 cl_find_ent_index                         | cmd      | "cl", "cheat"    | Display data for clientside entity matching specified index.<br>Format: cl_find_ent_index &lt;index&gt;<br>
 cl_fixedcrosshairgap                      | 3        | "cl", "a", "ss"  | For crosshair style 1: How big to make the gap between the pips in the fixed crosshair
@@ -3363,6 +3364,7 @@ r_pix_start                               | 0        | "devonly"        |
 r_pixelfog                                | 1        | "devonly"        | 
 r_pixelvisibility_partial                 | 1        | "devonly", "cl"  | 
 r_pixelvisibility_spew                    | 0        | "devonly", "cl"  | 
+r_player_visibility_mode                  | 1        | "cl", "a"        | 
 r_portal_use_pvs_optimization             | 1        | "devonly"        | Enables an optimization that allows portals to be culled when outside of the PVS.
 r_portalscloseall                         | 0        | "devonly"        | 
 r_portalsopenall                          | 0        | "cheat"          | Open all portals
