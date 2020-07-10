@@ -1461,6 +1461,7 @@ er_colwidth                               | 100      | "devonly"        |
 er_graphwidthfrac                         | 0.2      | "devonly"        | 
 er_maxname                                | 14       | "devonly"        | 
 error_message_explain_pure                | cmd      | "cl", "hidden"   | Take user to Steam support article
+error_message_explain_unsigned            | cmd      | "cl", "hidden"   | Take user to Steam support article
 error_message_explain_vac                 | cmd      | "cl", "hidden"   | Take user to Steam support article
 errorcallstacks_enable                    | 0        | "devonly"        | All Error() calls will attach a callstack
 errorcallstacks_length                    | 20       | "devonly"        | Length of automatic error callstacks
@@ -3507,6 +3508,10 @@ reset_expo                                | cmd      | "sv", "cheat"    | Reset 
 reset_gameconvars                         | cmd      | "cheat"          | Reset a bunch of game convars to default values
 respawn_entities                          | cmd      | "sv", "sp", "cheat" | Respawn all the entities in the map.
 restart                                   | cmd      |                  | Restart the game on the same level (add setpos to jump to current view position on restart).
+restart_in_insecure                       | cmd      | "cl", "hidden"   | Restart in insecure mode
+restart_in_trusted                        | cmd      | "cl", "hidden"   | Restart in trusted mode
+restart_in_untrusted                      | cmd      | "cl", "hidden"   | Restart in untrusted mode
+restart_normal                            | cmd      | "cl", "hidden"   | Restart
 retry                                     | cmd      | "norecord"       | Retry connection to last server.
 room_type                                 | 0        | "devonly", "demo" | 
 rope_averagelight                         | 1        | "devonly", "cl"  | Makes ropes use average of cubemap lighting instead of max intensity.
@@ -4622,6 +4627,9 @@ trace_report                              | 0        | "devonly", "sv"  |
 traceattack                               | cmd      | "sv"             | traceattack damage hitgroup
 tracer_extra                              | 1        | "devonly", "cl"  | 
 triple_monitor_mode                       | 0        | "cl", "a"        | Enable triple-monitor mode, restricting UI elements to the middle third of the display
+trusted_launch                            | 0        | "cl", "a"        | Trusted launch status
+trusted_launch_info                       | cmd      | "cl"             | Present information about trusted launch to console
+trusted_launch_once                       | 0        | "cl", "a"        | Trusted launch shown once
 tv_advertise_watchable                    | 0        | "prot", "nf", "norecord" | GOTV advertises the match as watchable via game UI, clients watching via UI will not need to type password
 tv_allow_autorecording_index              | -1       | "sv"             | When &gt;=0 restricts autorecording only to the specified TV index
 tv_allow_camera_man_override              | 0        |                  | Allows cameraman_override to have effect. When this is set, the primary interactive caster will have all the relevant fields present in all network packets, in every snapshot. This allows the secondary cameraman (-interactivecaster that connects to a tv port) to override those fields some seconds later regardless of whether they changed originally or not.
