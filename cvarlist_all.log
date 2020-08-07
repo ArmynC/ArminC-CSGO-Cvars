@@ -1478,6 +1478,8 @@ fadeout                                   | cmd      | "sv", "cheat"    | fadeou
 fast_fogvolume                            | 0        | "devonly"        | 
 fast_poly_convert                         | 1        | "devonly"        | 
 ff_damage_bullet_penetration              | 0        | "cl", "rep"      | If friendly fire is off, this will scale the penetration power and damage a bullet does when penetrating another friendly player
+ff_damage_decoy_explosion                 | 0        | "cl", "rep"      | Enables or disables team damage from decoy detonation
+ff_damage_grenade_hit                     | 1        | "cl", "rep"      | Enables or disables team damage from thrown grenade impacts
 ff_damage_reduction_bullets               | 0.1      | "cl", "rep"      | How much to reduce damage done to teammates when shot.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy)
 ff_damage_reduction_grenade               | 0.25     | "cl", "rep"      | How much to reduce damage done to teammates by a thrown grenade.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy)
 ff_damage_reduction_grenade_self          | 1        | "cl", "rep"      | How much to damage a player does to himself with his own grenade.  Range is from 0 - 1 (with 1 being damage equal to what is done to an enemy)
@@ -3042,13 +3044,13 @@ playcast                                  | cmd      |                  | Play a
 playdemo                                  | cmd      |                  | Play a recorded demo file (.dem ).
 player_botdifflast_s                      | 2        | "cl", "a"        | 
 player_competitive_maplist_2v2_8_0_E8907D2E | mg_de_train,mg_de_lake,mg_de_inferno,mg_de_shortnuke,mg_de_vertigo,mg_gd_rialto,mg_de_shortdust,mg_de_overpass,mg_de_cbble | "cl", "a"        | 
-player_competitive_maplist_8_8_0_1B1D6577 | mg_de_dust2,mg_de_train,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_de_cache,mg_de_anubis,mg_de_chlorine,mg_cs_agency,mg_de_overpass | "cl", "a"        | 
+player_competitive_maplist_8_8_0_C51B3F85 | mg_de_dust2,mg_de_train,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_de_cache,mg_de_mutiny,mg_de_anubis,mg_de_swamp,mg_cs_agency,mg_de_overpass | "cl", "a"        | 
 player_debug_print_damage                 | 0        | "sv", "cheat"    | When true, print amount and type of all damage received by player to console.
 player_nevershow_communityservermessage   | 0        | "cl", "a", "ss"  | 
 player_old_armor                          | 0        | "devonly", "sv"  | 
 player_ping                               | cmd      | "sv", "print"    | Creates a ping notification where the player is looking.
 player_ping_throttle_decay                | 0.58     | "sv", "cheat"    | Decay for how fast the ping throttle delay will decay
-player_survival_list_8_0_7                | mg_dz_blacksite,mg_dz_sirocco,mg_dz_junglety | "cl", "a"        | 
+player_survival_list_8_0_3                | mg_dz_blacksite,mg_dz_sirocco | "cl", "a"        | 
 player_teamplayedlast                     | 3        | "cl", "a", "ss"  | 
 player_wargames_list2_8_0_604             | mg_skirmish_flyingscoutsman,mg_skirmish_armsrace,mg_skirmish_demolition | "cl", "a"        | 
 playflush                                 | cmd      |                  | Play a sound, reloading from disk in case of changes.
@@ -4125,6 +4127,7 @@ sv_client_min_interp_ratio                | 1        | "devonly", "rep" | This c
 sv_client_predict                         | -1       | "devonly", "rep" | This can be used to force the value of cl_predict for connected clients (only while they are connected).<br>   -1 = let clients set cl_predict to anything<br>    0 = force cl_predict to 0<br>    1 = force cl_predict to 1
 sv_clip_penetration_traces_to_players     | 1        | "devonly", "cl", "rep" | 
 sv_clockcorrection_msecs                  | 30       | "sv"             | The server tries to keep each player's m_nTickBase withing this many msecs of the server absolute tickcount
+sv_closecaption                           | 1        | "cl", "rep"      | Enable server-side close captioning: 0 = disabled; 1 = enabled as text chat; 2 = enabled for all sounds
 sv_coach_comm_unrestricted                | 0        | "cl", "rep"      | When set, ignores coach communication restrictions.
 sv_coaching_enabled                       | 0        | "cl", "rep"      | Allows spectating and communicating with a team ( 'coach t' or 'coach ct' )
 sv_comp_mode_allow_dc                     | 0        | "devonly", "sv"  | Set this to 1 to allow direct connects in Competitive mode
@@ -4713,7 +4716,7 @@ ui_loading_tip_f1                         | 0.05     | "devonly", "cl"  |
 ui_loading_tip_f2                         | 0.40     | "devonly", "cl"  | 
 ui_loading_tip_refresh                    | 5        | "devonly", "cl"  | 
 ui_lobby_draft_enabled                    |          | "cl"             | 
-ui_mainmenu_bkgnd_movie1                  | anubis   | "cl", "a"        | Main menu background movie
+ui_mainmenu_bkgnd_movie2                  | mutiny   | "cl", "a"        | Main menu background movie
 ui_nearbylobbies_filter3                  | competitive | "cl", "a"        | 
 ui_news_last_read_link                    |          | "cl", "a"        | 
 ui_playsettings_maps_listen_casual        | random_classic | "cl", "a"        | 
