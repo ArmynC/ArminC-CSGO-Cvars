@@ -474,7 +474,6 @@ banip                                     | cmd      |                  | Add an
 bench_end                                 | cmd      | "cheat"          | Ends gathering of info.
 bench_showstatsdialog                     | cmd      | "cl", "cheat"    | Shows a dialog displaying the most recent benchmark results.
 bench_start                               | cmd      | "cheat"          | Starts gathering of info. Arguments: filename to write results into
-bench_upload                              | cmd      | "cheat"          | Uploads most recent benchmark stats to the Valve servers.
 benchframe                                | cmd      |                  | Takes a snapshot of a particular frame in a time demo.
 bind                                      | cmd      |                  | Bind a key.
 bind_osx                                  | cmd      |                  | Bind a key for OSX only.
@@ -878,7 +877,6 @@ cl_extrapolate_amount                     | 0.25     | "cl", "cheat"    | Set ho
 cl_failremoteconnections                  | 0        | "devonly"        | Force connection attempts to time out
 cl_fastdetailsprites                      | 1        | "cl", "cheat"    | whether to use new detail sprite system
 cl_fasttempentcollision                   | 5        | "devonly", "cl"  | 
-cl_filtertext_enabled                     | 1        | "cl", "a"        | Enables text chat filtering
 cl_find_ent                               | cmd      | "cl", "cheat"    | Find and list all client entities with classnames that contain the specified substring.<br>Format: cl_find_ent &lt;substring&gt;<br>
 cl_find_ent_index                         | cmd      | "cl", "cheat"    | Display data for clientside entity matching specified index.<br>Format: cl_find_ent_index &lt;index&gt;<br>
 cl_fixedcrosshairgap                      | 3        | "cl", "a", "ss"  | For crosshair style 1: How big to make the gap between the pips in the fixed crosshair
@@ -936,8 +934,6 @@ cl_leafsystemvis                          | 0        | "cl", "cheat"    |
 cl_leveloverview                          | 0        | "cl", "cheat"    | 
 cl_leveloverviewmarker                    | 0        | "cl", "cheat"    | 
 cl_lock_camera                            | 0        | "cl", "cheat"    | 
-cl_mainmenu_blog_file                     | cmd      | "cl", "hidden"   | Load blog file
-cl_mainmenu_blog_file_cache               | blogfilecache.txt | "devonly", "cl", "hidden" | Location of the cached blog file
 cl_mainmenu_hide_blog                     | cmd      | "cl", "hidden"   | Show the news panel and hide blog
 cl_mainmenu_show_blog                     | cmd      | "cl", "hidden"   | Show the blog and hide news panel
 cl_mainmenu_show_datagraph                |          | "cl"             | 
@@ -1053,7 +1049,7 @@ cl_resend_timeout                         | 60       |                  | Total 
 cl_retire_low_priority_lights             | 0        | "devonly"        | Low priority dlights are replaced by high priority ones
 cl_righthand                              | 1        | "cl", "a", "ss"  | Use right-handed view models.
 cl_rumblescale                            | 1.0      | "cl", "a", "ss"  | Scale sensitivity of rumble effects (0 to 1.0)
-cl_sanitize_muted_players                 | 1        | "devonly", "cl"  | Hide names and avatars of muted players.
+cl_sanitize_muted_players                 | 1        | "cl"             | Hide names and avatars of muted players.
 cl_sanitize_player_names                  | 0        | "cl", "a"        | Replace names of other players with something non-offensive.
 cl_savescreenshotstosteam                 | 0        | "devonly", "hidden" | Saves screenshots to the Steam's screenshot library
 cl_scoreboard_mouse_enable_binding        | +attack2 | "cl", "a"        | Name of the binding to enable mouse selection in the scoreboard
@@ -1318,6 +1314,8 @@ demo_highlight_fastforwardspeed           | 10       | "devonly"        | Speed 
 demo_highlight_skipthreshold              | 10       | "devonly"        | Number of seconds between previous highlight event and round start that will fast forward instead of skipping.
 demo_highlight_timeafter                  | 4        | "devonly"        | How many seconds after highlight event to start fast forwarding.
 demo_highlight_timebefore                 | 6        | "devonly"        | How many seconds before highlight event to stop fast forwarding.
+demo_index                                | 0        | "a"              | If to use demo index. Needs to be set before loading demo.
+demo_index_max_other                      | 500      | "a"              | Limits the the count of index files of other (non-current) demos. Needs to be set before loading demo.
 demo_info                                 | cmd      |                  | Print information about currently playing demo.
 demo_interplimit                          | 4000     | "devonly"        | How much origin velocity before it's considered to have 'teleported' causing interpolation to reset.
 demo_interpolateview                      | 1        | "devonly"        | Do view interpolation during dem playback.
@@ -2046,6 +2044,9 @@ mat_dynamicPaintmaps                      | 0        | "cheat"          |
 mat_dynamic_tonemapping                   | 1        | "cheat"          | 
 mat_dynamiclightmaps                      | 0        | "cheat"          | 
 mat_edit                                  | cmd      | "cheat"          | Bring up the material under the crosshair in the editor
+mat_enable_uber_shaders                   | 9999999  | "a"              | 
+mat_enable_uber_shaders_optionsui         | 9999999  | "devonly", "cl"  | Used to set video property from options UI.
+mat_enable_uber_shaders_restart           | 1        | "devonly", "cl"  | Used to set video property at device reset.
 mat_envmapsize                            | 128      | "devonly"        | 
 mat_envmaptgasize                         | 32.0     | "devonly"        | 
 mat_exclude_async_update                  | 1        | "devonly"        | 
@@ -2857,7 +2858,7 @@ net_connections_stats                     | cmd      |                  | Print 
 net_drawslider                            | 0        | "devonly"        | Draw completion slider during signon
 net_droponsendoverflow                    | 0        |                  | If enabled, channel will drop client when sending too much data causes buffer overrun
 net_droppackets                           | 0        | "cheat"          | Drops next n packets on client
-net_dumpeventstats                        | cmd      |                  | Dumps out a report of game event network usage
+net_dumpeventstats                        | cmd      | "cheat"          | Dumps out a report of game event network usage
 net_dumptest                              | 0        | "devonly"        | 
 net_earliertempents                       | 0        | "cheat"          | 
 net_fakejitter                            | 0        | "cheat"          | Jitter fakelag packet time
@@ -3483,6 +3484,7 @@ rangefinder                               | cmd      | "cl", "cheat"    | rangef
 rate                                      | 196608   | "a", "user"      | Max bytes/sec the host can receive data
 rcon                                      | cmd      | "norecord"       | Issue an rcon command.
 rcon_address                              |          | "norecord"       | Address of remote server if sending unconnected rcon commands (format x.x.x.x:p) 
+rcon_connected_clients_allow              | 1        | "rep"            | Allow clients to use rcon commands on server.
 rcon_password                             |          | "norecord"       | remote console password.
 rebuy                                     | cmd      | "cl"             | Attempt to repurchase items with the order listed in cl_rebuy
 recompute_speed                           | cmd      | "cheat"          | Recomputes clock speed (for debugging purposes).
@@ -3761,7 +3763,7 @@ snd_headphone_pan_exponent                | cmd      |                  | Specif
 snd_headphone_pan_radial_weight           | cmd      |                  | Apply cos(angle) * weight before pan law
 snd_hrtf_async                            | 0        | "devonly"        | 
 snd_hrtf_benchmark                        | 0        | "devonly"        | 
-snd_hrtf_distance_behind                  | 100      | "a"              | HRTF calculations will calculate the player as being this far behind the camera<br>
+snd_hrtf_distance_behind                  | 100      | "a"              | HRTF calculations will calculate the player as being this far behind the camera. Valid values are between 0 and 300.<br>
 snd_hrtf_lerp_max_distance                | 800.0    | "cheat"          | 
 snd_hrtf_lerp_method                      | 1        | "devonly"        | 
 snd_hrtf_lerp_min_distance                | 100.0    | "cheat"          | 
@@ -3923,7 +3925,7 @@ softshadow_urt                            | 5.0f     | "devonly", "cl", "hidden"
 sound_device_list                         | cmd      |                  | Lists all available audio devices.
 sound_device_override                     |          | "a"              | ID of the sound device to use
 soundfade                                 | cmd      |                  | Fade client volume.
-soundinfo                                 | cmd      |                  | Describe the current sound device.
+soundinfo                                 | cmd      | "cheat"          | Describe the current sound device.
 soundlist                                 | cmd      |                  | List all known sounds.
 soundpatch_captionlength                  | 2.0      | "devonly", "cl", "rep" | How long looping soundpatch captions should display for.
 soundscape_debug                          | 0        | "sv", "cheat"    | When on, draws lines to all env_soundscape entities. Green lines show the active soundscape, red lines show soundscapes that aren't in range, and white lines show soundscapes that are in range, but not the active soundscape.
@@ -4378,12 +4380,8 @@ sv_prop_door_open_speed_scale             | 1        | "sv", "rep"      |
 sv_pure                                   | cmd      |                  | Show user data.
 sv_pure_allow_loose_file_loads            | 1        |                  | If set to 1, clients may load non-vpk files from pure protected directories.
 sv_pure_allow_missing_files               | 1        |                  | If set to 1, the server will allow clients to play if files they loaded are missing on server, otherwise treat client as file mismatch.
-sv_pure_checkvpk                          | cmd      |                  | CheckPureServerVPKFiles
 sv_pure_consensus                         | 99999999 |                  | Minimum number of file hashes to agree to form a consensus.
-sv_pure_finduserfiles                     | cmd      |                  | ListPureServerFiles
 sv_pure_kick_clients                      | 1        |                  | If set to 1, the server will kick clients with mismatching files. Otherwise, it will issue a warning to the client.
-sv_pure_listfiles                         | cmd      |                  | ListPureServerFiles
-sv_pure_listuserfiles                     | cmd      |                  | ListPureServerFiles
 sv_pure_retiretime                        | 900      |                  | Seconds of server idle time to flush the sv_pure file hash cache.
 sv_pure_trace                             | 0        |                  | If set to 1, the server will print a message whenever a client is verifying a CRC for a file.
 sv_pushaway_clientside                    | 0        | "devonly", "cl", "rep" | Clientside physics push away (0=off, 1=only localplayer, 1=all players)
