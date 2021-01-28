@@ -641,6 +641,7 @@ cash_team_hostage_alive                   | 0        | "cl", "nf", "rep" |
 cash_team_hostage_interaction             | 500      | "cl", "nf", "rep" | 
 cash_team_loser_bonus                     | 1400     | "cl", "nf", "rep" | 
 cash_team_loser_bonus_consecutive_rounds  | 500      | "cl", "nf", "rep" | 
+cash_team_loser_bonus_shorthanded         | 0        | "cl", "nf", "rep" | 
 cash_team_planted_bomb_but_defused        | 800      | "cl", "nf", "rep" | 
 cash_team_rescued_hostage                 | 0        | "cl", "nf", "rep" | 
 cash_team_survive_guardian_wave           | 1000     | "cl", "nf", "rep" | 
@@ -979,6 +980,7 @@ cl_observed_bot_crosshair                 | 0        | "cl", "a"        | Contro
 cl_observercrosshair                      | 1        | "cl", "a", "ss"  | 
 cl_overdraw_test                          | 0        | "cl", "numeric", "cheat" | 
 cl_panelanimation                         | cmd      | "cl"             | Shows panel animation variables: &lt;panelname \| blank for all panels&gt;.
+cl_parachute_autodeploy                   | 1        | "cl", "a", "user", "ss" | Auto-deploy parachute if fall speed exceeds lethal limit
 cl_particle_batch_mode                    | 1        | "devonly", "cl"  | 
 cl_particle_fallback_base                 | 0        | "devonly", "cl"  | Base for falling back to cheaper effects under load.
 cl_particle_fallback_multiplier           | 1        | "devonly", "cl"  | Multiplier for falling back to cheaper effects under load.
@@ -2662,6 +2664,8 @@ mp_roundtime_hostage                      | 0        | "sv", "nf", "rep" | How m
 mp_scrambleteams                          | cmd      | "sv"             | Scramble the teams and restart the game
 mp_shield_speed_deployed                  | 170      | "cl", "rep"      | The max speed of a player when they have a shield deployed
 mp_shield_speed_holstered                 | 200      | "cl", "rep"      | The max speed of a player when they have a shield holstered
+mp_shorthanded_cash_bonus_ignore_kicked   | 1        | "cl", "rep"      | Determines whether kicked players are included in the assessment for short-handedness
+mp_shorthanded_cash_bonus_round_delay     | 2        | "cl", "rep"      | number of previous rounds that a team needs to have been shorthanded before they are eligible for the short-handed loser bonus
 mp_showcleanedupents                      | 0        | "devonly", "sv", "cheat" | Show entities that are removed on round respawn.
 mp_showroundtransitions                   | 0        | "devonly", "sv", "cheat" | Show gamestate round transitions.
 mp_solid_teammates                        | 1        | "cl", "rep"      | How solid are teammates: 0 = transparent; 1 = fully solid; 2 = can stand on top of heads
@@ -2711,6 +2715,8 @@ mp_teams_unbalance_limit                  | 1        | "devonly", "cl", "nf", "r
 mp_teamscore_1                            |          | "sv"             | A non-empty string for best-of-N maps won by the first team.
 mp_teamscore_2                            |          | "sv"             | A non-empty string for best-of-N maps won by the second team.
 mp_teamscore_max                          | 0        | "sv"             | How many maps to win the series (bo3 max=2; bo5 max=3; bo7 max=4)
+mp_technical_timeout_duration_s           | 0        | "sv", "cl", "rep" | How many seconds is a full technical timeout?
+mp_technical_timeout_per_team             | 0        | "sv", "cl", "rep" | How many technical timeouts are there per team?
 mp_timelimit                              | 5        | "cl", "nf", "rep" | game time per map in minutes
 mp_tkpunish                               | 0        | "sv", "rep"      | Will TK'ers and team damagers be punished in the next round?  {0=no,  1=yes}
 mp_tournament                             | 0        | "devonly", "cl", "nf", "rep" | 
