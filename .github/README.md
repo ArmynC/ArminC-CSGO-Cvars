@@ -1,15 +1,15 @@
 # ArminC-CSGO-Cvars
 
-The following is a list of [Counter-Strike: Global Offensive](https://steamdb.info/patchnotes/?appid=730) console commands and variables (hidden/development-only too).
+The following is a list of [Counter-Strike: Global Offensive](https://steamdb.info/app/730/patchnotes/) console commands and variables (hidden/development-only too).
 
 ##### View [cvarlist_all.log](https://github.com/ArmynC/ArminC-CSGO-Cvars/blob/master/cvarlist_all.log), latest version (of this git).
 
 ## Version
 
 ```
-Protocol version 13778 [1230/1230]
-Exe version 1.37.7.8 (csgo)
-Exe build: 14:24:21 Jan 26 2021 (8012) (730)
+Protocol version 13807 [1375/1375]
+Exe version 1.38.0.7 (csgo)
+Exe build: 13:09:56 Oct 15 2021 (8378) (730)
 ```
 
 ### History
@@ -21,4 +21,4 @@ Looking for a specific release? [Here is the list of updates.](https://github.co
 Depending on how often the list is updated, the alternative is to [self-check the latest cvars](https://github.com/saul/csgo-cvar-unhide). 
 
 ## License
-[GNU LGPLv3](https://tldrlegal.com/license/gnu-lesser-general-public-license-v3-(lgpl-3))
+[![License: CC0-1.0](https://img.shields.io/badge/License-CC0%201.0-lightgrey.svg)](https://tldrlegal.com/license/creative-commons-cc0-1.0-universal)
