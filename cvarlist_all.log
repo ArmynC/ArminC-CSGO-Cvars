@@ -21,6 +21,7 @@ Name | Default | Flags | Description
 +csm_rot_y_neg                            | cmd      | "cl"             | 
 +csm_rot_y_plus                           | cmd      | "cl"             | 
 +duck                                     | cmd      | "cl"             | 
++duck_notoggle                            | cmd      | "cl"             | 
 +forward                                  | cmd      | "cl"             | 
 +graph                                    | cmd      | "cl"             | 
 +grenade1                                 | cmd      | "cl"             | 
@@ -37,6 +38,9 @@ Name | Default | Flags | Description
 +moveleft                                 | cmd      | "cl"             | 
 +moveright                                | cmd      | "cl"             | 
 +moveup                                   | cmd      | "cl"             | 
++quickbuyradial                           | cmd      | "cl"             | 
++quickgearradial                          | cmd      | "cl"             | 
++quickgrenaderadial                       | cmd      | "cl"             | 
 +quickinv                                 | cmd      | "cl"             | 
 +radialradio                              | cmd      | "cl"             | 
 +radialradio2                             | cmd      | "cl"             | 
@@ -53,6 +57,7 @@ Name | Default | Flags | Description
 +spray_menu                               | cmd      | "cl"             | 
 +strafe                                   | cmd      | "cl"             | 
 +use                                      | cmd      | "cl"             | 
++use_or_reload                            | cmd      | "cl"             | 
 +vgui_drawtree                            | cmd      |                  | 
 +voicerecord                              | cmd      |                  | 
 +walk                                     | cmd      | "cl"             | 
@@ -80,6 +85,7 @@ Name | Default | Flags | Description
 -csm_rot_y_neg                            | cmd      | "cl"             | 
 -csm_rot_y_plus                           | cmd      | "cl"             | 
 -duck                                     | cmd      | "cl"             | 
+-duck_notoggle                            | cmd      | "cl"             | 
 -forward                                  | cmd      | "cl"             | 
 -graph                                    | cmd      | "cl"             | 
 -grenade1                                 | cmd      | "cl"             | 
@@ -96,6 +102,9 @@ Name | Default | Flags | Description
 -moveleft                                 | cmd      | "cl"             | 
 -moveright                                | cmd      | "cl"             | 
 -moveup                                   | cmd      | "cl"             | 
+-quickbuyradial                           | cmd      | "cl"             | 
+-quickgearradial                          | cmd      | "cl"             | 
+-quickgrenaderadial                       | cmd      | "cl"             | 
 -quickinv                                 | cmd      | "cl"             | 
 -radialradio                              | cmd      | "cl"             | 
 -radialradio2                             | cmd      | "cl"             | 
@@ -112,6 +121,7 @@ Name | Default | Flags | Description
 -spray_menu                               | cmd      | "cl"             | 
 -strafe                                   | cmd      | "cl"             | 
 -use                                      | cmd      | "cl"             | 
+-use_or_reload                            | cmd      | "cl"             | 
 -vgui_drawtree                            | cmd      |                  | 
 -voicerecord                              | cmd      |                  | 
 -walk                                     | cmd      | "cl"             | 
@@ -411,6 +421,59 @@ ai_use_frame_think_limits                 | 1        | "devonly", "sv"  |
 ai_use_think_optimizations                | 1        | "devonly", "sv"  | 
 ai_use_visibility_cache                   | 1        | "devonly", "sv"  | 
 ai_vehicle_avoidance                      | 1        | "sv", "cheat"    | 
+aim_flickstick_circular_deadzone_max      | 0.94     | "cl", "a", "ss"  | 
+aim_flickstick_circular_deadzone_min      | 0.6      | "cl", "a", "ss"  | 
+aim_flickstick_crank_sensitivity          | 1.0      | "cl", "a", "ss"  | Multiplies sweep rotation
+aim_flickstick_crank_tightness            | 0.8      | "cl", "a", "ss"  | Higher values mean sweep rotation are snappier. Lower values are smoother
+aim_flickstick_enabled                    | 0        | "cl", "a", "ss"  | O: Conventional aiming. 1: FlickStick aiming. 2: Flick stick except for scoping.
+aim_flickstick_flick_snap_mode            | 5        | "cl", "a", "ss"  | Snap initial flick to a quantized direction. 0: No Snap. 1: 180 deg. 2: 90 deg. 3: 60 deg. 4: 45 deg. 5: Ignore Forward Angle Defined By aim_flickstick_forward_deadzone
+aim_flickstick_flick_tightness            | 0.6      | "cl", "a", "ss"  | Flick stick snap tightness percentage
+aim_flickstick_forward_deadzone           | 7.0      | "cl", "a", "ss"  | Defines the flickstick deadzone in degrees when tapping forward. i.e. 7 degrees either side of tapping up on the flick stick will ignore that initial flick.
+aim_flickstick_release_dampen_speed       | 2.0f     | "cl", "a", "ss"  | Fully diminish the effect of sweep when the stick is returning to zero when the stick returns at this speed.
+aim_gyro_acceleration                     | 1        | "cl", "a", "ss"  | 0: No response curves. 1: Use response values (i.e. aim_gyro_low_sense_speed, aim_gyro_base_sensitivity, aim_gyro_high_sense_speed,aim_gyro_high_sense_multiplier
+aim_gyro_base_sensitivity                 | 1.5      | "cl", "a", "ss"  | Gyro speeds are multiplied by this value at aim_gyro_low_sense_speed or lower
+aim_gyro_circular_deadzone                | 0.0      | "cl", "a", "ss"  | Angle speeds from gyro lower than this will be zero'd. Not recommended.
+aim_gyro_conversion_mode                  | 0        | "cl", "a", "ss"  | 0: Use steam input pixels. 1-4: Use CSGO Native Gyro Implementation with various pitch/yaw implementations
+aim_gyro_enable_mode                      | 0        | "cl", "a", "ss"  | 0: Gyro Always on. 1: Gyro on while scoping only 2. Gyro on when right stick released
+aim_gyro_high_sense_multiplier            | 2.0      | "cl", "a", "ss"  | Gyro speeds are multiplied by this when at aim_gyro_high_sense_speed or greater 
+aim_gyro_high_sense_speed                 | 360.0    | "cl", "a", "ss"  | Gyro input speeds (degrees per second) greater than this use aim_gyro_high_sense_multiplier.
+aim_gyro_invert_pitch                     | 0        | "cl", "a", "ss"  | Invert pitch of gyro controlling aim.
+aim_gyro_invert_yaw                       | 0        | "cl", "a", "ss"  | Invert yaw of gyro controlling aim.
+aim_gyro_low_sense_speed                  | 7.5      | "cl", "a", "ss"  | Gyro input speeds (degrees per second) less than this use aim_gyro_low_sense_multiplier
+aim_gyro_pitchyaw_ratio                   | 0.5      | "cl", "a", "ss"  | 0.0: Reduce vertical sensitivity to zero. 1.0: Reduce horizontal sensitivity to zero. 0.5: Equal sensitivities.
+aim_gyro_precision_speed                  | 0.75     | "cl", "a", "ss"  | Angle speeds from gyro lower than this will be ramped down.
+aim_gyro_raw                              | 0        | "cl", "a", "ss"  | 0: Use Response Curves etc. 1: Use 1:1 Gyro angles.
+aim_gyro_ray_angle                        | -45      | "cl", "a", "ss"  | Figure out pitch and roll based on this ray projected from controller local space onto a worldspace sphere. Read the delta yaw and pitch in world space. 0: ray is forward (same as world yaw). -90: ray is up (same as world roll)
+aim_gyro_siapi_convert_pixels_to_angles   | 25.50    | "cl", "a", "ss"  | Magic number to convert SIAPI gyro pixel output into angles. aim_gyro_siapi_sensitivity_setting must be set to the current gyro sensitivity in the configurator. aim_gyro_siapi_vertical_scale_setting must be set to the same value as the vertical scale in the configurator.
+aim_gyro_siapi_sensitivity_setting        | 600      | "cl", "a", "ss"  | Set to the same SIAPI Configurator sensitivity for GyroCamera in order to have 1:1. 10 = min, 600 = max
+aim_gyro_siapi_vertical_scale_setting     | 100      | "cl", "a", "ss"  | Set to the same SIAPI Configurator for GyroCamera's SensitivityVerticalScale in order to have 1:1 gyro to aiming. 0 = min, 200 = max
+aim_gyro_square_deadzone_pitch            | 0.0      | "cl", "a", "ss"  | Non zero values will bias aim toward straight horizontal aiming. Not recommended.
+aim_gyro_square_deadzone_yaw              | 0.0      | "cl", "a", "ss"  | Non zero values will bias aim toward straight vertical aiming. Not recommended.
+aim_gyro_zoom_dampening_level1            | 0.8      | "cl", "a", "ss"  | Multiply gyro aim sensitivity by this when zoomed in (scope level 1 and ADS)..
+aim_gyro_zoom_dampening_level2            | 0.6      | "cl", "a", "ss"  | Multiply gyro aim sensitivity by this when zoomed in (scope level 2).
+aim_stick_circular_deadzone_max           | 0.90     | "cl", "a", "ss"  | Stick inputs at this deflection or more appear as one.
+aim_stick_circular_deadzone_min           | 0.17     | "cl", "a", "ss"  | Stick inputs at this deflection or less appear as zero.
+aim_stick_extra_turning_delay             | 0.0      | "cl", "a", "ss"  | How long to wait before ramping in extra turning.
+aim_stick_extra_turning_ramp_up_time      | 0.6      | "cl", "a", "ss"  | How soon does extra turning reach maximum when stick is pegged.
+aim_stick_extra_yaw                       | 160.0    | "cl", "a", "ss"  | When the stick is fully pegged, gain extra yaw rate over time.
+aim_stick_invert_pitch                    | 0        | "cl", "a", "ss"  | Invert pitch of stick controlling aim.
+aim_stick_invert_yaw                      | 0        | "cl", "a", "ss"  | Invert yaw of stick controlling aim.
+aim_stick_rate_pitch                      | 160.0    | "cl", "a", "ss"  | How fast the stick turns the camera horizontally at max deflection (degrees per second)
+aim_stick_rate_yaw                        | 270.0    | "cl", "a", "ss"  | How fast the stick turns the camera vertically at max deflection (degrees per second)
+aim_stick_response_curve                  | 3        | "cl", "a", "ss"  | Larger values allow finer control when feathering the stick.
+aim_stick_square_deadzone_pitch           | 0.05     | "cl", "a", "ss"  | Non zero values will bias aim toward straight horizontal aiming. Not recommended.
+aim_stick_square_deadzone_yaw             | 0.0      | "cl", "a", "ss"  | Non zero values will bias aim toward straight vertical aiming. Not recommended.
+aim_stick_zoom_dampening_level1           | 0.8      | "cl", "a", "ss"  | Multiply stick aim sensitivity by this when zoomed in (scope level 1 and ADS).
+aim_stick_zoom_dampening_level2           | 0.6      | "cl", "a", "ss"  | Multiply stick aim sensitivity by this when zoomed in (scope level 2).
+aim_touchpad_circular_deadzone_min        | 0.0      | "cl", "a", "ss"  | touchpad inputs at this deflection or less appear as zero.
+aim_touchpad_invert_pitch                 | 0        | "cl", "a", "ss"  | Invert pitch of touchpad controlling aim.
+aim_touchpad_invert_yaw                   | 0        | "cl", "a", "ss"  | Invert yaw of touchpad controlling aim.
+aim_touchpad_sensitivity_pitch            | 3.5      | "cl", "a", "ss"  | touchpad's pitch contribution to Aim
+aim_touchpad_sensitivity_yaw              | 4.0      | "cl", "a", "ss"  | touchpad's yaw contribution to Aim
+aim_touchpad_square_deadzone_pitch        | 0.0      | "cl", "a", "ss"  | Non zero values will bias aim toward straight horizontal aiming. Not recommended.
+aim_touchpad_square_deadzone_yaw          | 0.0      | "cl", "a", "ss"  | Non zero values will bias aim toward straight vertical aiming. Not recommended.
+aim_touchpad_zoom_dampening_level1        | 0.8      | "cl", "a", "ss"  | Multiply aim sensitivity by this when zoomed in.
+aim_touchpad_zoom_dampening_level2        | 0.6      | "cl", "a", "ss"  | Multiply aim sensitivity by this when zoomed in.
 ainet_generate_report                     | cmd      | "sv"             | Generate a report to the console.
 ainet_generate_report_only                | cmd      | "sv"             | Generate a report to the console.
 air_density                               | cmd      | "sv", "cheat"    | Changes the density of air for drag computations.
@@ -925,6 +988,8 @@ cl_interp_ratio                           | 2.0      | "cl", "user"     | Sets t
 cl_interp_watch                           | -2       | "devonly", "cl"  | 
 cl_interpolate                            | 1        |                  | Enables or disables interpolation on listen servers or during demo playback
 cl_inventory_debug_tooltip                | 0        | "cl"             | 
+cl_inventory_radial_immediate_select      | 1        | "cl", "a", "ss"  | In inventory selection radials. Select weapons the moment the cursor highlights them. Otherwise, only select the selected item on exit.
+cl_inventory_radial_tap_to_cycle          | 1        | "cl", "a", "ss"  | In inventory selection radials. Select weapons the moment the cursor highlights them. Otherwise, only select the selected item on exit.
 cl_inventory_saved_filter2                | all      | "cl", "a"        | 
 cl_inventory_saved_sort2                  | inv_sort_age | "cl", "a"        | 
 cl_invites_only_friends                   | 0        | "cl", "a"        | If turned on, will ignore in-game invites from recent teammates or other non-friends
@@ -1030,6 +1095,7 @@ cl_promoted_settings_acknowledged         | 0:0      | "cl", "a"        |
 cl_proximity_grass                        | 1        | "devonly"        | 
 cl_quest_events_print                     | cmd      | "cl"             | cl_quest_events_print
 cl_quest_schedule_print                   | cmd      | "cl"             | cl_quest_schedule_print
+cl_quickinventory_filename                | radial_quickinventory.txt | "cl", "a"        | 
 cl_quickinventory_lastinv                 | 1        | "cl", "a"        | 
 cl_quickinventory_line_update_speed       | 65.0f    | "cl", "a"        | 
 cl_radar_always_centered                  | 1        | "cl", "a"        | If set to 0, the radar is maximally used. Otherwise the player is always centered, even at map extents.
@@ -1038,6 +1104,9 @@ cl_radar_icon_scale_min                   | 0.6      | "cl", "a"        | Sets t
 cl_radar_rotate                           | 1        | "cl", "a"        | 1
 cl_radar_scale                            | 0.7      | "cl", "a"        | Sets the radar scale. Valid values are 0.25 to 1.0.
 cl_radar_square_with_scoreboard           | 1        | "cl", "a"        | If set, the radar will toggle to square when the scoreboard is visible.
+cl_radial_coyote_time                     | 0.15     | "devonly", "cl"  | Selection lenience: How long in seconds the last selected radial segment is used if no segment is selected.
+cl_radial_menu_icon_radius                | 200      | "devonly", "cl"  | 
+cl_radial_menu_tap_duration               | 0.2      | "devonly", "cl"  | If nothing in a radial menu is selected, and the button engaging the radial menu is released within this duration, fallback on the radial's tap functionality
 cl_radial_radio_tab                       | 0        | "cl"             | 
 cl_radial_radio_tab_0_text_1              | #Chatwheel_quiet | "cl", "a"        | 
 cl_radial_radio_tab_0_text_2              | #Chatwheel_requestecoround | "cl", "a"        | 
@@ -1063,8 +1132,10 @@ cl_radial_radio_tab_2_text_5              | #Chatwheel_rotatetome | "cl", "a"   
 cl_radial_radio_tab_2_text_6              | #Chatwheel_ihavethebomb | "cl", "a"        | 
 cl_radial_radio_tab_2_text_7              | #Chatwheel_oneenemyhere | "cl", "a"        | 
 cl_radial_radio_tab_2_text_8              | #Chatwheel_requestspend | "cl", "a"        | 
+cl_radial_radio_tap_to_ping               | 1        | "cl", "a"        | When tapping the radial radio button, leave a ping if nothing is selected within the time in seconds set in cl_radial_menu_tap_duration
 cl_radial_radio_version_reset             | 2        | "cl", "a"        | 
-cl_radialmenu_deadzone_size               | 0.04     | "cl", "a"        | 
+cl_radialmenu_deadzone_size_fraction      | 0.4      | "cl"             | 
+cl_radialmenu_deadzone_size_joystick      | 0.17     | "cl", "a"        | 
 cl_ragdoll_collide                        | 0        | "devonly", "cl"  | 
 cl_ragdoll_crumple                        | 1        | "devonly", "cl"  | 
 cl_ragdoll_gravity                        | 600      | "cl", "cheat"    | Sets the gravity client-side ragdolls
@@ -1127,7 +1198,7 @@ cl_showhelp                               | 1        | "cl", "a"        | Set to
 cl_showloadout                            | 1        | "cl", "a", "ss"  | Toggles display of current loadout.
 cl_showpausedimage                        | 1        | "devonly", "cl"  | Show the 'Paused' image when game is paused.
 cl_showpluginmessages2                    | 0        | "a"              | Allow plugins to display messages to you
-cl_showpos                                | 0        | "cl"             | Draw current position at top of screen
+cl_showpos                                | 0        | "cl", "cheat"    | Draw current position at top of screen
 cl_showtextmsg                            | 1        | "devonly", "cl"  | Enable/disable text messages printing on the screen.
 cl_sidespeed                              | 450      | "cl", "cheat"    | 
 cl_sim_grenade_trajectory                 | cmd      | "cl", "cheat"    | Draw trajectory of the deployed grenade if thrown from this position. Takes an optional parameter for how long the drawn trajectory will last.
@@ -1648,7 +1719,7 @@ gameinstructor_dump_open_lessons          | cmd      | "cl", "cheat"    | Gives 
 gameinstructor_enable                     | 1        | "cl", "a"        | Display in game lessons that teach new players.
 gameinstructor_find_errors                | 0        | "cl", "cheat"    | Set to 1 and the game instructor will run EVERY scripted command to uncover errors.
 gameinstructor_reload_lessons             | cmd      | "cl", "cheat"    | Shuts down all open lessons and reloads them from the script file.
-gameinstructor_reset_counts               | cmd      | "cl"             | Resets all display and success counts to zero.
+gameinstructor_reset_counts               | cmd      | "devonly", "cl"  | Resets all display and success counts to zero.
 gameinstructor_save_restore_lessons       | 1        | "cl", "cheat"    | Set to 0 to disable save/load of open lesson opportunities in single player.
 gameinstructor_start_sound_cooldown       | 4.0      | "devonly", "cl"  | Number of seconds forced between similar lesson start sounds.
 gameinstructor_verbose                    | 0        | "cl", "cheat"    | Set to 1 for standard debugging or 2 (in combo with gameinstructor_verbose_lesson) to show update actions.
@@ -1669,8 +1740,8 @@ gameui_preventescape                      | cmd      |                  | Escape
 gameui_preventescapetoshow                | cmd      |                  | Escape key doesn't show game UI
 gameui_xbox                               | 0        | "devonly"        | 
 gcmd                                      | cmd      | "cl", "hidden"   | Generate a command
-getpos                                    | cmd      | "cl"             | dump position and angles to the console
-getpos_exact                              | cmd      | "cl"             | dump origin and angles to the console
+getpos                                    | cmd      | "cl", "cheat"    | dump position and angles to the console
+getpos_exact                              | cmd      | "cl", "cheat"    | dump origin and angles to the console
 gg_knife_kill_demotes                     | 1        | "devonly", "sv", "rep" | 0 = knife kill in gungame has no effect on player level, 1 = knife kill demotes player by one level
 give                                      | cmd      | "sv", "print"    | Give item to player.<br>	Arguments: &lt;item_name&gt;
 givecurrentammo                           | cmd      | "sv", "cheat"    | Give a supply of ammo for current weapon..<br>
@@ -1797,7 +1868,9 @@ inferno_velocity_decay_factor             | 0.2      | "sv", "cheat"    |
 inferno_velocity_factor                   | 0.003    | "sv", "cheat"    | 
 inferno_velocity_normal_factor            | 0        | "sv", "cheat"    | 
 invnext                                   | cmd      | "cl"             | 
+invnextequipment                          | cmd      | "cl"             | 
 invnextgrenade                            | cmd      | "cl"             | 
+invnextgun                                | cmd      | "cl"             | 
 invnextitem                               | cmd      | "cl"             | 
 invnextnongrenade                         | cmd      | "cl"             | 
 invprev                                   | cmd      | "cl"             | 
@@ -2424,6 +2497,19 @@ morph_debug                               | 0        | "devonly"        |
 morph_path                                | 7        | "devonly"        | 
 mortar_visualize                          | 0        | "devonly", "sv"  | 
 motdfile                                  | motd.txt | "sv"             | The MOTD file to load.
+move_stick_aggression_strength            | 60.0     | "cl", "a", "ss"  | The change in position in stick will also contribute to the movement, making for snappier response.
+move_stick_aggressive                     | 1        | "cl", "a", "ss"  | The change in position in stick will also contribute to the movement, making for snappier response.
+move_stick_circular_deadzone_max          | 0.9      | "cl", "a", "ss"  | Stick inputs at this deflection or more appear as one.
+move_stick_circular_deadzone_min          | 0.17     | "cl", "a", "ss"  | Stick inputs at this deflection or less appear as zero.
+move_stick_response_curve                 | 1.0      | "cl", "a", "ss"  | Larger values allow finer control when feathering the stick.
+move_stick_square_deadzone_forward        | 0.0      | "cl", "a", "ss"  | Non zero values will bias aim toward straight vertical aiming. Not recommended.
+move_stick_square_deadzone_strafe         | 0.25     | "cl", "a", "ss"  | Non zero values will bias aim toward straight horizontal aiming. Not recommended.
+move_stick_walk_zone                      | 0.65     | "cl", "a", "ss"  | Proportion of middle stick throw dedicated to walking speed.
+move_touchpad_circular_deadzone_min       | 0.1      | "cl", "a", "ss"  | touchpad inputs at this deflection or less appear as zero.
+move_touchpad_sensitivity_forward         | 1.0      | "cl", "a", "ss"  | touchpad's yaw contribution to Aim
+move_touchpad_sensitivity_strafe          | 1.0      | "cl", "a", "ss"  | touchpad's pitch contribution to Aim
+move_touchpad_square_deadzone_forward     | 0.2      | "cl", "a", "ss"  | Non zero values will bias forward movement to zero for better strafe lines.
+move_touchpad_square_deadzone_strafe      | 0.2      | "cl", "a", "ss"  | Non zero values will bias strafe movement to zero to help run directly forward more easily
 movie_fixwave                             | cmd      |                  | Fixup corrupted .wav file if engine crashed during startmovie/endmovie, etc.
 movie_volume_scale                        | 1.0      | "devonly"        | 
 mp_afterroundmoney                        | 0        | "cl", "rep"      | amount of money awared to every player after each round
@@ -2556,6 +2642,7 @@ mp_ggtr_num_rounds_autoprogress           | 3        | "cl", "rep"      | Upgrad
 mp_give_player_c4                         | 1        | "cl", "rep"      | Whether this map should spawn a c4 bomb for a player or not.
 mp_global_damage_per_second               | 0.0      | "sv", "rep"      | If above 0, deal non-lethal damage to players over time.
 mp_guardian_add_bounds_pt                 | cmd      | "sv"             | mp_guardian_add_bounds_pt
+mp_guardian_add_enemy_spawn_pt            | cmd      | "sv"             | mp_guardian_add_enemy_spawn_pt
 mp_guardian_add_player_spawn_pt           | cmd      | "sv"             | mp_guardian_add_player_spawn_pt
 mp_guardian_ai_bt_difficulty_adjust_wave_interval | 1        | "sv", "rep"      | Adjust the guardian bots' difficulty every nth guardian wave when using behavior trees.
 mp_guardian_ai_bt_difficulty_cap_beginning_round | 2        | "sv", "rep"      | Starting this round a difficulty cap will be applied to the bots.
@@ -2568,6 +2655,7 @@ mp_guardian_bomb_plant_emit_bounds_config | cmd      | "sv"             | mp_gua
 mp_guardian_bomb_plant_new_bounds         | cmd      | "sv"             | mp_guardian_bomb_plant_new_bounds
 mp_guardian_bot_money_per_wave            | 800      | "sv", "rep"      | The amount of money bots get time each wave the players complete.  This # is absolute and not additive, the money is set to (this)x(wave#) for each bot on each wave.
 mp_guardian_clear_all_bounds              | cmd      | "sv"             | mp_guardian_clear_all_bounds
+mp_guardian_clear_all_enemy_spawns        | cmd      | "sv"             | mp_guardian_clear_all_enemy_spawns
 mp_guardian_clear_all_player_spawns       | cmd      | "sv"             | mp_guardian_clear_all_player_spawns
 mp_guardian_draw_bounds                   | 0        | "devonly", "sv"  | 
 mp_guardian_emit_bounds_config            | cmd      | "sv"             | mp_guardian_emit_bounds_config
@@ -3117,16 +3205,16 @@ play_hrtf                                 | cmd      |                  | Play a
 playcast                                  | cmd      |                  | Play a broadcast
 playdemo                                  | cmd      |                  | Play a recorded demo file (.dem ).
 player_botdifflast_s                      | 2        | "cl", "a"        | 
-player_competitive_maplist_2v2_10_1_8B1DA40F | mg_de_train,mg_de_lake,mg_de_inferno,mg_de_shortnuke,mg_de_vertigo,mg_de_ravine,mg_de_extraction,mg_de_shortdust,mg_de_overpass,mg_de_cbble | "cl", "a"        | 
-player_competitive_maplist_8_10_1_62D24D31 | mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_de_cache,mg_cs_insertion2,mg_lobby_mapveto,mg_de_basalt,mg_cs_agency,mg_de_overpass | "cl", "a"        | 
+player_competitive_maplist_2v2_10_0_E75D3568 | mg_de_train,mg_de_lake,mg_de_inferno,mg_de_shortnuke,mg_de_vertigo,mg_de_prime,mg_de_blagai,mg_de_shortdust,mg_de_overpass,mg_de_cbble | "cl", "a"        | 
+player_competitive_maplist_8_10_0_34A40040 | mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_de_cache,mg_de_breach,mg_de_anubis,mg_de_tuscan,mg_lobby_mapveto,mg_cs_agency,mg_de_overpass | "cl", "a"        | 
 player_debug_print_damage                 | 0        | "sv", "cheat"    | When true, print amount and type of all damage received by player to console.
 player_nevershow_communityservermessage   | 0        | "cl", "a", "ss"  | 
 player_old_armor                          | 0        | "devonly", "sv"  | 
 player_ping                               | cmd      | "sv", "print"    | Creates a ping notification where the player is looking.
 player_ping_token_cooldown                | 20       | "sv", "cheat"    | Cooldown for how long it takes for a player's ping token to refresh allowing them to ping again (they get 5 tokens).
-player_survival_list_10_1_13              | mg_dz_blacksite,mg_dz_sirocco,mg_dz_county | "cl", "a"        | 
+player_survival_list_10_0_303             | mg_dz_blacksite,mg_dz_sirocco,mg_dz_vineyard,mg_dz_ember | "cl", "a"        | 
 player_teamplayedlast                     | 3        | "cl", "a", "ss"  | 
-player_wargames_list2_10_1_E04            | mg_skirmish_flyingscoutsman,mg_skirmish_armsrace,mg_skirmish_demolition,mg_skirmish_retakes | "cl", "a"        | 
+player_wargames_list2_10_0_E04            | mg_skirmish_flyingscoutsman,mg_skirmish_armsrace,mg_skirmish_demolition,mg_skirmish_retakes | "cl", "a"        | 
 playflush                                 | cmd      |                  | Play a sound, reloading from disk in case of changes.
 playgamesound                             | cmd      | "cl", "cheat"    | Play a sound from the game sounds txt file
 playoverwatchevidence                     | cmd      | "hidden"         | Play evidence for an overwatch case.
@@ -3644,12 +3732,8 @@ sb_firstopentime                          | 0        | "devonly"        | Indica
 sb_numtimesopened                         | 0        | "devonly"        | Indicates the number of times the server browser was opened this session.
 sb_quick_list_bit_field                   | -1       | "devonly"        | 
 sb_showblacklists                         | 0        | "devonly"        | If set to 1, blacklist rules will be printed to the console as they're applied.
-sc_enable                                 | 1.0      | "cl", "a", "ss"  | Enable SteamController
-sc_joystick_map                           | 1        | "a"              | How to map the analog joystick deadzone and extents 0 = Scaled Cross, 1 = Concentric Mapping to Square.
-sc_pitch_sensitivity                      | 1.0      | "cl", "a", "ss"  | SteamController pitch factor.
-sc_pitch_sensitivity_default              | 1.0      | "devonly", "cl"  | 
-sc_yaw_sensitivity                        | 1.0      | "cl", "a", "ss"  | SteamController yaw factor.
-sc_yaw_sensitivity_default                | 1.0      | "devonly", "cl"  | 
+sc_say                                    | cmd      | "cl"             | Opens the Steam keyboard for Deck
+sc_say_team                               | cmd      | "cl"             | Opens the Steam keyboard for Deck
 scandemo                                  | cmd      |                  | Scan a recorded demo file (.dem ) for specific game events and dump data.
 scene_async_prefetch_spew                 | 0        | "devonly", "sv"  | Display async .ani file loading info.
 scene_clamplookat                         | 1        | "devonly", "sv"  | Clamp head turns to a MAX of 20 degrees per think.
@@ -4048,7 +4132,7 @@ spec_overwatch_skip_idle_ticks            | 10       | "devonly", "cl"  | Auto-d
 spec_player                               | cmd      | "cl"             | Spectate player by index
 spec_player_by_accountid                  | cmd      | "cl"             | Spectate player by Steam account ID
 spec_player_by_name                       | cmd      | "cl"             | Spectate player by name
-spec_pos                                  | cmd      | "cl"             | dump position and angles to the console
+spec_pos                                  | cmd      | "cl", "cheat"    | dump position and angles to the console
 spec_prev                                 | cmd      | "cl"             | Spectate previous player ( valid values are 3 to 6 )
 spec_replay_autostart                     | 1        | "cl", "a"        | Auto-start Killer Replay when available
 spec_replay_autostart_delay               | 1.5      | "devonly", "cl"  | Time in freeze panel before switching to Killer Replay automatically
@@ -4105,10 +4189,15 @@ startupmenu                               | cmd      |                  | Opens 
 stats                                     | cmd      |                  | Prints server performance variables
 status                                    | cmd      |                  | Display map and connection status.
 steam_controller_haptics                  | 1        | "cl"             | 
-steam_controller_status                   | cmd      |                  | Spew report of steam controller status
 steamcontroller_flow_interval             | 7000     | "devonly"        | 
 steamcontroller_flow_sensitivity          | 0.75     | "devonly"        | 
 steamcontroller_haptic_intensity          | 320      | "devonly"        | 
+steaminput_firsttimepopup                 | 0        | "cl", "a", "ss"  | When controller menu is opened, pop up a first time message.
+steaminput_glyph_display_mode             | 0        | "cl", "a"        | 0: Automatically turn on/off glyphs based in input. 1: Glyphs never turn on. 2: Glyphs always on.
+steaminput_glyph_neutral                  | 1        | "cl", "a"        | Fallback values for unspecified style in steam input Glyphs. 0: Use Colors, 1: Solid
+steaminput_glyph_solid                    | 1        | "cl", "a"        | Fallback values for unspecified style in steam input Glyphs. 0: Not Solid, 1: Solid
+steaminput_glyph_style                    | 1        | "cl", "a"        | Fallback values for unspecified style in steam input Glyphs. 0: Knockout, 1: Light, 2: Dark
+steaminput_status                         | cmd      |                  | Spew report of steam input status
 steamworks_sessionid_client               | 0        | "cl", "hidden", "user" | The client session ID for the new steamworks gamestats.
 steamworks_sessionid_lifetime_client      | 0        | "devonly", "cl", "hidden" | The full client session ID for the new steamworks gamestats.
 steamworks_sessionid_server               | 0        | "devonly", "cl", "hidden", "rep" | The server session ID for the new steamworks gamestats.
@@ -4393,6 +4482,7 @@ sv_massreport                             | 0        | "devonly", "sv"  |
 sv_master_share_game_socket               | 1        | "devonly"        | Use the game's socket to communicate to the master server. If this is 0, then it will create a socket on -steamport + 1 to communicate to the master server on.
 sv_matchend_drops_enabled                 | 1        | "sv"             | Rewards gameplay time is always accumulated for players, but drops at the end of the match can be prevented
 sv_matchpause_auto_5v5                    | 0        | "cl", "rep"      | When enabled will automatically pause the match at next freeze time if less than 5 players are connected on each team.
+sv_max_allowed_developer                  | 0        | "rep"            | Determines whether.
 sv_max_allowed_net_graph                  | 1        | "cl", "nf", "rep" | Determines max allowed net_graph value for clients.
 sv_max_distance_transmit_footsteps        | 1250.0   | "devonly", "cl", "rep" | Maximum distance to transmit footstep sound effects.
 sv_max_dropped_packets_to_process         | 10       |                  | Max dropped packets to process. Lower settings prevent lagged players from simulating too far in the past. Setting of 0 disables cap.
@@ -4453,6 +4543,7 @@ sv_penetration_type                       | 1        | "devonly", "cl", "rep" | 
 sv_phys_props_block_movers                | 0        | "devonly", "sv"  | 
 sv_player_parachute_velocity              | -200     | "sv", "rep"      | 
 sv_playerperfhistorycount                 | 20       | "devonly", "sv"  | Number of samples to maintain in player perf history
+sv_playerradio_use_allowlist              | 1        | "sv"             | playerradio commands may only use responses from an allow list of commands.
 sv_precacheinfo                           | cmd      |                  | Show precache info.
 sv_prime_accounts_only                    | 0        | "sv"             | When this setting is enabled only prime users can connect to this game server.
 sv_prop_door_open_speed_scale             | 1        | "sv", "rep"      | 
@@ -4700,6 +4791,7 @@ toggleThreadedBuildRWList                 | cmd      | "devonly", "cl"  | toggle
 toggleUnlitPath                           | cmd      |                  | toggleUnlitPath
 toggleVtxLitPath                          | cmd      |                  | toggleVtxLitPath
 toggle_duck                               | cmd      | "cl"             | 
+toggle_speed                              | cmd      | "cl"             | 
 toggleconsole                             | cmd      | "norecord"       | Show/hide the console.
 togglescores                              | cmd      | "cl"             | Toggles score panel
 toolload                                  | cmd      |                  | Load a tool.
@@ -4732,8 +4824,11 @@ tv_broadcast_max_requests1                | 20       |                  | Max nu
 tv_broadcast_origin_auth                  | gocastauth | "hidden"         | X-Origin-Auth header of the broadcast POSTs
 tv_broadcast_origin_auth1                 | gocastauth | "hidden"         | X-Origin-Auth header of the broadcast1 POSTs
 tv_broadcast_origin_delay                 | 0        | "hidden"         | Injection delay request for CDN rebroadcast frameworks, seconds
+tv_broadcast_preload_avatars_add          | cmd      |                  | add certain avatars to be preloaded from disk
+tv_broadcast_preload_avatars_clear        | cmd      |                  | clear all avatars that were scheduled to be preloaded from disk
+tv_broadcast_preload_avatars_show         | cmd      |                  | display which avatars will be preloaded from disk
 tv_broadcast_resend                       | cmd      |                  | resend broadcast data to broadcast relay
-tv_broadcast_server_info_message_size_kb  | 512      |                  | The size, in KB, of the server info message size for tv broadcasts.
+tv_broadcast_server_info_message_size_kb  | 1024     |                  | The size, in KB, of the server info message size for tv broadcasts.
 tv_broadcast_startup_resend_interval      | 10       |                  | The interval, in seconds, of re-sending startup data to the broadcast relay server (useful in case relay crashes, restarts or startup data http request fails)
 tv_broadcast_status                       | cmd      |                  | Print out broadcast status
 tv_broadcast_terminate                    | 1        | "hidden"         | Terminate every broadcast with a stop command
@@ -4802,7 +4897,7 @@ ui_loading_tip_f1                         | 0.05     | "devonly", "cl"  |
 ui_loading_tip_f2                         | 0.40     | "devonly", "cl"  | 
 ui_loading_tip_refresh                    | 5        | "devonly", "cl"  | 
 ui_lobby_draft_enabled                    |          | "cl"             | 
-ui_mainmenu_bkgnd_movie_53A07E69          | county   | "cl", "a"        | Main menu background movie
+ui_mainmenu_bkgnd_movie_CC4ECB9           | anubis   | "cl", "a"        | Main menu background movie
 ui_nearbylobbies_filter3                  | competitive | "cl", "a"        | 
 ui_news_last_read_link                    |          | "cl", "a"        | 
 ui_playsettings_custom_preset             |          | "cl", "a"        | 
