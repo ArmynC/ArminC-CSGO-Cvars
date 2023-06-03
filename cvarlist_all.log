@@ -748,7 +748,6 @@ cl_SetupAllBones                          | 0        | "devonly", "cl"  |
 cl_ShowBoneSetupEnts                      | 0        | "devonly", "cl"  | Show which entities are having their bones setup each frame.
 cl_ShowSunVectors                         | 0        | "devonly", "cl"  | 
 cl_access_all_missions                    |          | "devonly", "cl"  | 
-cl_accountprivacysetting1                 | 1        | "cl", "hidden"   | 
 cl_aggregate_particles                    | 1        | "devonly", "cl"  | 
 cl_allowdownload                          | 1        | "a"              | Client downloads customization files
 cl_allowupload                            | 1        | "a"              | Client uploads customization files
@@ -1010,9 +1009,9 @@ cl_leveloverviewmarker                    | 0        | "cl", "cheat"    |
 cl_lock_camera                            | 0        | "cl", "cheat"    | 
 cl_mainmenu_hide_blog                     | cmd      | "cl", "hidden"   | Show the news panel and hide blog
 cl_mainmenu_show_blog                     | cmd      | "cl", "hidden"   | Show the blog and hide news panel
-cl_mainmenu_show_datagraph                |          | "cl"             | 
 cl_mantle_gunloweramt                     | 20       | "devonly", "cl"  | 
 cl_mantle_gunlowerspeed                   | 1.4      | "devonly", "cl"  | 
+cl_matchlist_controlroom_aid              |          | "cl", "hidden"   | 
 cl_matchstats_print_own_data              | cmd      | "cl"             | cl_matchstats_print_own_data RANGENAME
 cl_maxrenderable_dist                     | 3000     | "cl", "cheat"    | Max distance from the camera at which things will be rendered
 cl_medal_progress_shown_fraction          | 5        | "devonly", "cl"  | Show progress on the win panel every GOAL/X increments for stat based achievements.
@@ -1443,6 +1442,8 @@ demo_ui_enable                            |          | "devonly", "cl"  | Suffix
 demolist                                  | cmd      |                  | Print demo sequence list.
 demos                                     | cmd      |                  | Demo demo file sequence.
 demoui                                    | cmd      | "norecord"       | Show/hide the demo player UI.
+dev_break_after_count                     | 0        | "devonly", "cl", "rep" | 
+dev_create_sensitivity_report             | 0        | "devonly", "cl"  | 
 dev_force_selected_device                 | 0        | "devonly"        | 
 dev_reportmoneychanges                    | 0        | "devonly", "sv", "rep" | Displays money account changes for players in the console
 developer                                 | 0        |                  | Set developer message level
@@ -3205,8 +3206,8 @@ play_hrtf                                 | cmd      |                  | Play a
 playcast                                  | cmd      |                  | Play a broadcast
 playdemo                                  | cmd      |                  | Play a recorded demo file (.dem ).
 player_botdifflast_s                      | 2        | "cl", "a"        | 
-player_competitive_maplist_2v2_10_0_E75D3568 | mg_de_train,mg_de_lake,mg_de_inferno,mg_de_shortnuke,mg_de_vertigo,mg_de_prime,mg_de_blagai,mg_de_shortdust,mg_de_overpass,mg_de_cbble | "cl", "a"        | 
-player_competitive_maplist_8_10_0_34A40040 | mg_de_dust2,mg_de_train,mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_cs_office,mg_de_cache,mg_de_breach,mg_de_anubis,mg_de_tuscan,mg_lobby_mapveto,mg_cs_agency,mg_de_overpass | "cl", "a"        | 
+player_competitive_maplist_2v2_10_0_E8C782EC | mg_de_train,mg_de_lake,mg_de_inferno,mg_de_shortnuke,mg_de_vertigo,mg_de_boyard,mg_de_chalice,mg_de_shortdust,mg_de_overpass,mg_de_cbble | "cl", "a"        | 
+player_competitive_maplist_8_10_0_C9C8D674 | mg_de_ancient,mg_de_inferno,mg_de_nuke,mg_de_vertigo,mg_de_mirage,mg_de_anubis,mg_de_overpass,mg_de_dust2,mg_de_train,mg_cs_office,mg_de_cache,mg_de_tuscan,mg_lobby_mapveto,mg_cs_agency | "cl", "a"        | 
 player_debug_print_damage                 | 0        | "sv", "cheat"    | When true, print amount and type of all damage received by player to console.
 player_nevershow_communityservermessage   | 0        | "cl", "a", "ss"  | 
 player_old_armor                          | 0        | "devonly", "sv"  | 
@@ -4476,7 +4477,7 @@ sv_logsecret                              | 0        |                  | If set
 sv_logsocket                              | 1        |                  | Uses a specific outgoing socket for sv udp logging
 sv_logsocket2                             | 1        |                  | Uses a specific outgoing socket for second source of sv udp logging
 sv_logsocket2_substr                      |          |                  | Uses a substring match for second source of sv udp logging
-sv_mapvetopickvote_maps                   | de_inferno,de_mirage,de_vertigo,de_dust2,de_overpass,de_nuke,de_ancient | "sv"             | Which maps are used for map veto pick sequence
+sv_mapvetopickvote_maps                   | de_anubis,de_inferno,de_mirage,de_vertigo,de_overpass,de_nuke,de_ancient | "sv"             | Which maps are used for map veto pick sequence
 sv_mapvetopickvote_phase_duration         | [1:12][2:25][5:12][6:11] | "sv"             | How many seconds each phase lasts
 sv_massreport                             | 0        | "devonly", "sv"  | 
 sv_master_share_game_socket               | 1        | "devonly"        | Use the game's socket to communicate to the master server. If this is 0, then it will create a socket on -steamport + 1 to communicate to the master server on.
