@@ -7,9 +7,9 @@ The following is a list of [Counter-Strike: Global Offensive](https://steamdb.in
 ## Version
 
 ```
-Protocol version 13844 [1519/1519]
-Exe version 1.38.4.4 (csgo)
-Exe build: 10:44:18 Sep 30 2022 (8598) (730)
+Protocol version 13877 [1568/1568]
+Exe version 1.38.7.7 (csgo)
+Exe build: 11:38:53 Feb  2 2023 (8802) (730)
 ```
 
 ### History
