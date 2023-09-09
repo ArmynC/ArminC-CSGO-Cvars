@@ -1,5 +1,12 @@
 # ArminC-CSGO-Cvars
 
+<div style="text-align: center;">
+  ❌ End of support for CS:GO version of Cvars list ❌
+</div>
+<div style="text-align: center;">
+  Seeking latest version? <a href="https://github.com/ArmynC/ArminC-CS2-Cvars">https://github.com/ArmynC/ArminC-CS2-Cvars</a>
+</div>
+
 The following is a list of [Counter-Strike: Global Offensive](https://steamdb.info/app/730/patchnotes/) console commands and variables (hidden/development-only too).
 
 ##### View [cvarlist_all.log](https://github.com/ArmynC/ArminC-CSGO-Cvars/blob/master/cvarlist_all.log), latest version (of this git).
